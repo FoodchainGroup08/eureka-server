@@ -1,8 +1,8 @@
 FROM eclipse-temurin:17-jdk-alpine AS build
 RUN apk add --no-cache maven
 WORKDIR /app
-COPY pom.xml .
-COPY src src
+COPY eureka-server/pom.xml .
+COPY eureka-server/src src
 RUN mvn package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
